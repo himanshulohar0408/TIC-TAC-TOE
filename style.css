@@ -1,1 +1,157 @@
+*{
+    margin: 0;
+    padding: 0;
+}
 
+body{
+    background-color: #ACBAC4;
+    text-align: center;
+}
+
+.main-container{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+.message-container{
+    width: 35vw;
+    height: 100px;
+    background-color: #ACBAC4;
+    color: #fff;
+    margin: 16px auto;
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.2rem;
+    border-radius: 10px;
+    font-size: 2rem;
+}
+
+.container{
+    height: 64vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#msg{
+    color: #191913;
+    padding-bottom: 0.5rem;
+}
+
+.game{
+    height: 60vmin; 
+    width: 60vmin;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1.4rem;
+}
+
+.box{
+    height: 18vmin;
+    width: 18vmin;
+    border-radius: 1.3rem;
+    border: none;
+    font-size: 8rem;
+    color: #30364F;
+    box-shadow: inset;
+    background-color: #ebebc8;
+    transition: all 0.25 ease;
+}
+
+.box:hover{
+    background: white;
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.box:disabled:hover{
+    background-color: #ede4c2;
+    transform: none;
+    cursor: default;
+    box-shadow: none;
+
+}
+
+.box:disabled {
+    background-color: #ede4c2;  
+    opacity: 0.7;                
+    cursor: not-allowed;
+}
+
+@keyframes winGlow {
+    0% {
+        box-shadow: 0 0 5px #E5BA41;
+        transform: scale(1);
+    }
+    50% {
+        box-shadow: 0 0 25px  #E5BA41;
+        transform: scale(1.1);
+    }
+    100% {
+        box-shadow: 0 0 5px  #E5BA41;
+        transform: scale(1);
+    }
+}
+
+.win {
+    animation: winGlow 0.8s ease-in-out 2;
+}
+
+@keyframes popIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.8) translateY(-10px);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+.show {
+    animation: popIn 0.4s ease-in-out;
+}
+
+.reset-button{
+    padding: 0.8rem;
+    margin-bottom: 2rem;
+    font-size: 1.25rem;
+    background-color: #060606;
+    color: white;
+    border-radius: 0.6rem;
+    border: none;
+}
+
+.new-game{
+    padding: 0.6rem;
+    font-size: 1rem;
+    background-color: #060606;
+    color: #fff;
+    border-radius: 0.6rem;
+    border: none;
+    font-size: 1.25rem;
+}
+
+.hide{
+    display: none;
+}
+
+.heading{
+    display: none;
+}
+
+h1{
+    height: 68px;
+    text-align: center;
+    margin-top: 3rem;
+    padding-top: 2rem;
+    font-size: 3.5rem;
+}
