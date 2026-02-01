@@ -17,6 +17,8 @@ body{
 }
 
 .message-container{
+    cursor: default;
+    user-select: none;
     width: 35vw;
     height: 100px;
     background-color: #ACBAC4;
