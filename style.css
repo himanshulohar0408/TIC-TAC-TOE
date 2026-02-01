@@ -55,6 +55,8 @@ body{
 }
 
 .box{
+    cursor: default;
+    user-select: none;
     height: 18vmin;
     width: 18vmin;
     border-radius: 1.3rem;
@@ -149,6 +151,8 @@ body{
 }
 
 h1{
+    cursor: default;
+    user-select: none;
     height: 68px;
     text-align: center;
     margin-top: 3rem;
