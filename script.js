@@ -56,6 +56,7 @@ const gamedraw = () =>{
     message.innerText = `Game is a draw`;
     messagecontainer.classList.remove("hide");
     heading.classList.add("heading");
+    messagecontainer.classList.add("show");
     disabled();
 }
 
