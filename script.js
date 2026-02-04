@@ -55,6 +55,7 @@ boxes.forEach((box)=>{
 const gamedraw = () =>{
     message.innerText = `Game is a draw`;
     messagecontainer.classList.remove("hide");
+    heading.classList.add("heading");
     disabled();
 }
 
