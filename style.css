@@ -1,6 +1,7 @@
 *{
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 body{
@@ -9,36 +10,29 @@ body{
 }
 
 .main-container{
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 2rem;
 }
 
+
 .message-container{
     cursor: default;
     user-select: none;
     width: 35vw;
-    height: 100px;
+    min-height: 100px;
     background-color: #ACBAC4;
     color: #fff;
-    margin: 16px auto;
-    margin-top: 2rem;
+    margin: 2rem auto 1rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 0.2rem;
+    gap: 0.4rem;
     border-radius: 10px;
     font-size: 2rem;
-}
-
-.container{
-    height: 64vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 #msg{
@@ -46,7 +40,15 @@ body{
     padding-bottom: 0.5rem;
 }
 
+.container{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .game{
+    grid-template-columns: repeat(3, 1fr);
     height: 60vmin; 
     width: 60vmin;
     display: flex;
@@ -65,9 +67,8 @@ body{
     border: none;
     font-size: 8rem;
     color: #30364F;
-    box-shadow: inset;
     background-color: #ebebc8;
-    transition: all 0.25 ease;
+    transition: all 0.25s ease;
 }
 
 .box:hover{
@@ -76,33 +77,22 @@ body{
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
-.box:disabled:hover{
-    background-color: #ede4c2;
-    transform: none;
-    cursor: default;
-    box-shadow: none;
-
-}
-
 .box:disabled {
     background-color: #ede4c2;  
     opacity: 0.7;                
     cursor: not-allowed;
 }
 
+.box:disabled:hover{
+    transform: none;
+    box-shadow: none;
+}
+
+
 @keyframes winGlow {
-    0% {
-        box-shadow: 0 0 5px #E5BA41;
-        transform: scale(1);
-    }
-    50% {
-        box-shadow: 0 0 25px  #E5BA41;
-        transform: scale(1.1);
-    }
-    100% {
-        box-shadow: 0 0 5px  #E5BA41;
-        transform: scale(1);
-    }
+    0% { box-shadow: 0 0 5px #E5BA41; }
+    50% { box-shadow: 0 0 25px #E5BA41; transform: scale(1.1); }
+    100% { box-shadow: 0 0 5px #E5BA41; }
 }
 
 .win {
@@ -110,42 +100,35 @@ body{
 }
 
 @keyframes popIn {
-    0% {
-        opacity: 0;
-        transform: scale(0.8) translateY(-10px);
-    }
-    100% {
-        opacity: 1;
-        transform: scale(1) translateY(0);
-    }
+    0% { opacity: 0; transform: scale(0.9); }
+    100% { opacity: 1; transform: scale(1); }
 }
 
 .show {
     animation: popIn 0.4s ease-in-out;
 }
 
+
 .reset-button{
     cursor: default;
     user-select: none;
-    padding: 0.8rem;
-    margin-bottom: 2rem;
+    margin-top: 2rem;
+    padding: 0.8rem 1.2rem;
     font-size: 1.25rem;
     background-color: #060606;
     color: white;
     border-radius: 0.6rem;
     border: none;
 }
-
 .new-game{
     cursor: default;
     user-select: none;
-    padding: 0.6rem;
-    font-size: 1rem;
+    padding: 0.8rem 1.2rem;
+    font-size: 1.25rem;
     background-color: #060606;
-    color: #fff;
+    color: white;
     border-radius: 0.6rem;
     border: none;
-    font-size: 1.25rem;
 }
 
 .hide{
@@ -156,12 +139,50 @@ body{
     display: none;
 }
 
-h1{
+h1{ 
     cursor: default;
     user-select: none;
-    height: 68px;
-    text-align: center;
     margin-top: 3rem;
-    padding-top: 2rem;
     font-size: 3.5rem;
+    min-height: 100px;
+}
+
+
+@media (max-width: 600px){
+
+    .main-container{
+        gap: 1rem;
+    }
+
+    h1{
+        font-size: 2.2rem;
+        margin-top: 1.5rem;
+    }
+
+    .message-container{
+        width: 90%;
+        font-size: 1.4rem;
+        padding: 0.8rem;
+    }
+
+    .game{
+        grid-template-columns: repeat(3, 1fr);
+        width: 90vmin;
+        height: 90vmin;
+        gap: 0.8rem;
+    }
+
+    .box{
+        width: 28vmin;
+        height: 28vmin;
+        font-size: 4rem;
+        border-radius: 1rem;
+    }
+
+    .reset-button,
+    .new-game{
+        width: 90%;
+        font-size: 1rem;
+        padding: 0.6rem;
+    }
 }
